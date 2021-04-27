@@ -139,14 +139,16 @@
 .shopcard
 {
   height: 400px;
-  box-shadow: 10px 10px 5px grey;
+
   padding: 10px;
 
 }
 
-#shopcard
+.all
 {
-  background-color: black;
+  background-color: rgb(247, 247, 247);
+  margin: 10px;
+  box-shadow: 10px 10px 5px grey;
 }
 
 .all:hover #mm

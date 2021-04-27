@@ -39,6 +39,7 @@ export class ShopService {
   {
     return this.http.get(this.url.mainUrl + 'shop').subscribe(res => {
       this.shops = res as [];
+      console.log(res)
 
     })
   }
@@ -55,7 +56,7 @@ export class ShopService {
 
     return this.http.get(this.url.mainUrl + 'shop/'+data).subscribe(res => {
       this.shops = res;
-      console.log(res)
+
     })
   }
 }

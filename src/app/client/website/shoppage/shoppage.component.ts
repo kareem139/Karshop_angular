@@ -41,4 +41,10 @@ export class ShoppageComponent implements OnInit {
     });
   }
 
+  getfilter(e:any)
+  {
+    console.log("kmnknm")
+      console.log(e.target.value)
+  }
+
 }

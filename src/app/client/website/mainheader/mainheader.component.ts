@@ -14,9 +14,9 @@ export class MainheaderComponent implements OnInit {
 
   isVendor: any;
   isCustomer: any;
-  payload = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]));
-  role = this.payload.role;
-  userId = this.payload.userId;
+  // payload = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]));
+  // role = this.payload.role;
+  // userId = this.payload.userId;
 
   constructor(public userservice: UserService, public url: UrlService, config: NgbCarouselConfig,
     public shopservice: ShopService, public cartservice: CartitemService,private modalService:NgbModal) {
@@ -30,29 +30,32 @@ export class MainheaderComponent implements OnInit {
         if (localStorage.getItem('token')!=null) {
           this.userservice.loginstatus = true;
           this.userservice.getuserdata();
+
+          switch (this.userservice.userdata.role) {
+            case "Vendor":
+              this.isVendor = true;
+              this.isCustomer = false;
+
+              break;
+
+            case "Customer":
+              this.isCustomer = true;
+              this.isVendor = false;
+              break;
+            default:
+             this.isCustomer = false;
+             this.isVendor = false;
+
+              break;
+          }
         } else {
           this.userservice.loginstatus = false;
+          console.log('jkhh')
         }
 
-       switch (this.role) {
-         case "Vendor":
-           this.isVendor = true;
-           this.isCustomer = false;
 
-           break;
 
-         case "Customer":
-           this.isCustomer = true;
-           this.isVendor = false;
-           break;
-         default:
-          this.isCustomer = false;
-          this.isVendor = false;
-
-           break;
-       }
-
-    this.cartservice._get_all_items(this.userId);
+    this.cartservice._get_all_items(this.userservice.userdata.userId);
 
 
   }

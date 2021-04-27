@@ -1,6 +1,20 @@
 <div class="row" id="main">
   <div class="col-lg-2" id="left">
-
+      <div class="row">
+        <div class="col-lg-10 col-md-10 m-auto">
+              <ul> Category
+                  <li *ngFor="let cat of this.shopservice.shops.categories">
+                      <input type="checkbox" value="={{cat.categoryId}}" (change)="getfilter($event)">  <span>{{cat.categoryName}}</span>
+                  </li>
+              </ul>
+              <hr>
+              <ul>Brand
+                <li *ngFor="let brand of this.shopservice.shops.brands">
+                    <input type="checkbox" value="={{brand.brandId}}">  <span>{{brand.brandName}}</span>
+                </li>
+            </ul>
+        </div>
+      </div>
   </div>
   <div class="col-lg-8" id="mainshop">
 
