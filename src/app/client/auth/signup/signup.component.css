@@ -1,0 +1,48 @@
+.myform
+{
+  height: 90%;
+  background-color: rgba(250, 251, 252, 0.287);
+  width: 90%;
+}
+
+.main
+{
+  height: 98vh;
+  background-image: url('src/assets/pexels-moose-photos-1037992.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+.vh
+{
+  width: 2px;
+  height: 80%;
+  background-color: cadetblue;
+  margin: auto;
+}
+
+
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 200px solid transparent;
+  border-bottom: 200px solid transparent;
+
+  border-left: 200px solid rgb(156, 169, 212);
+}
+@media screen and (max-width:768px) {
+
+  .title
+{
+    display: none;
+}
+.vh{
+  display: none;
+}
+
+}
+
+
+
+
+

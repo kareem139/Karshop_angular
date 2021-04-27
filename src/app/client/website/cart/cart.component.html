@@ -1,0 +1,51 @@
+<div class="row">
+  <table class="table table-light">
+    <thead class="thead-light">
+      <tr>
+        <th>productName</th>
+        <th>quantity</th>
+        <th>unitprice</th>
+        <th>shopName</th>
+        <th>total</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of this.cartservice.cartitems">
+        <td>{{item.productName}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.unitprice}}</td>
+        <td>{{item.shopName}}</td>
+        <td>{{(item.quantity)*(item.unitprice)}}</td>
+        <td>
+          <a  class=" btn btn-success" (click)="order(item)">orderNow</a>
+          <a  class=" btn btn-success" (click)="open(stripe)">check</a>
+
+          <ng-template #stripe let-modal >
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">pay</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-12">
+                      <app-payment></app-payment>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

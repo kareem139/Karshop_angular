@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="col-12">
+        <ngb-carousel >
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <div class="row">
+                <div class="col-12">
+                  <img src="{{this.url.mainUrl+(this.productservice.products.imageUrl1.replace('\\','//'))}}" alt="Random first slide" class="img">
+                </div>
+              </div>
+
+            </div>
+
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <div class="row">
+                <div class="col-12">
+                  <img src="{{this.url.mainUrl+(this.productservice.products.imageUrl2.replace('\\','//'))}}" alt="Random first slide" class="img">
+                </div>
+              </div>
+            </div>
+
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <div class="row">
+                <div class="col-12">
+                  <img src="{{this.url.mainUrl+(this.productservice.products.imageUrl3.replace('\\','//'))}}" alt="Random first slide" class="img">
+                </div>
+              </div>
+            </div>
+
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-6">
+    <div class="row">
+      <form ngForm="form" (ngSubmit)="submit(this.cartservice.cart,this.productservice.products.productId)">
+        <input type="number" name="quantity" [(ngModel)]="this.cartservice.cart.quantity">
+
+        <hr>
+        <input type="submit" value="add" class=" btn btn-success">
+      </form>
+    </div>
+  </div>
+</div>

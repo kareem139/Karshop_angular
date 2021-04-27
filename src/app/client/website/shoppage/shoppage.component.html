@@ -1,0 +1,58 @@
+<div class="row" id="main">
+  <div class="col-lg-2" id="left">
+
+  </div>
+  <div class="col-lg-8" id="mainshop">
+
+    <div class="row">
+      <div class="col-lg-3 col-md-3 mycard" *ngFor="let item of this.shopservice.shops.products">
+        <div class="row p-0 m-0" style="height: inherit;">
+          <div class="col-12 text-center ll">
+            <img src="{{this.url.mainUrl+(item.imageUrl1.replace('\\','//'))}}" alt=""  class="myimage" id="img1">
+            <img src="{{this.url.mainUrl+(item.imageUrl2.replace('\\','//'))}}" alt=""  class="myimage" id="img2">
+
+          </div>
+
+          <hr>
+
+          <div class="col-12 fixed" id="alldata">
+            <div class="row" style="height: inherit;">
+                <h5 href="" class=" ui-widget-header"> {{item.productName}}</h5>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="quickview">
+          <a  class="btn btn-outline-success" (click)="open(queckview,item.productId,this.shopservice.shops.shopId)"><i class="bi bi-eye"></i></a>
+          <ng-template #queckview let-modal >
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">{{item.productName}}</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-12">
+                    <app-product-qv></app-product-qv>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-2" id="right">
+
+  </div>
+</div>

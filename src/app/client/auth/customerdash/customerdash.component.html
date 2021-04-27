@@ -1,0 +1,87 @@
+
+
+<div class="row">
+  <div class="col-8 m-auto">
+    <div class="row" id="profile">
+      <div class="col-lg-12">
+        <span>Profile</span>
+      </div>
+      <div class="col-lg-12">
+        <div class="row">
+          <table class="table table-light">
+
+            <tbody>
+              <tr>
+                <td>userName</td>
+                <td>{{this.userservice.userdata.name}}</td>
+                <td><a href="">edit</a></td>
+              </tr>
+
+              <tr>
+                <td>Type</td>
+                <td>{{this.userservice.userdata.roleName}}</td>
+                <td><a href="">edit</a></td>
+              </tr>
+
+              <tr>
+                <td>Email</td>
+                <td>{{this.userservice.userdata.email}}</td>
+                <td><a href="">edit</a></td>
+              </tr>
+
+              <tr>
+                <td>Address</td>
+                <td>{{this.userservice.userdata.address}}</td>
+                <td><a href="">edit</a></td>
+              </tr>
+
+              <tr>
+                <td>PhoneNum</td>
+                <td>{{this.userservice.userdata.phoneNum}}</td>
+                <td><a href="">edit</a></td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+      </div>
+  </div>
+    <hr>
+  <div class="row" id="order">
+            <div class="col-lg-12">
+              <h3>Order Details</h3>
+            </div>
+            <div class="col-lg-12">
+              <table class="table table-light">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Shop Name</th>
+                    <th>OrderTime</th>
+                    <th>Status</th>
+                    <th>deliverAddress</th>
+                    <th>Items</th>
+                    <th>action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of this.orderservice.orders">
+                    <td>{{item.shopName}}</td>
+                    <td>{{this.orderservice.orders.orderTime}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.deliverAddress}}</td>
+                    <td>
+                      <ul *ngFor="let i of item.cartitems">
+                          <li>{{i.productName}}</li>
+                          <li>{{i.quantity}}</li>
+                          <li>{{i.price}}</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+  </div>
+  </div>
+</div>

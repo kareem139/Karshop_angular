@@ -1,0 +1,187 @@
+<nav class="navbar navbar-expand-lg  fixed-top firsthead"  id="firsthead">
+  <a class="navbar-brand">Fashion Store</a>
+  <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      |
+      <li class="nav-item">
+        <a class="nav-link " href="#"  >About</a>
+      </li>
+
+      <!-- cart here -->
+      <li class="nav-item">
+        <a class="nav-link " (click)="open(cart)"  ><i class="bi bi-cart3"></i><span *ngIf="this.cartservice.cartitems">{{this.cartservice.cartitems.length}}</span></a>
+        <ng-template #cart let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">cart</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <app-cart></app-cart>
+                </div>
+              </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+
+          </div>
+        </ng-template>
+
+      </li>
+
+
+
+
+
+      <li class="nav-item" *ngIf="!this.userservice.loginstatus">
+        <a class="nav-link " href="/user/signin"  >sign in</a>
+
+      </li>
+
+      <li class="nav-item" *ngIf="!this.userservice.loginstatus">
+        <a class="nav-link " href="/user/signup"  >sign up</a>
+
+      </li>
+    </ul>
+    <ul class="navbar-nav float-right">
+
+
+      <li class="nav-item float-right" *ngIf="this.userservice.loginstatus">
+
+
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary m-auto" id="dropdownBasic1" ngbDropdownToggle>{{this.userservice.userdata.name}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <div ngbDropdownItem *ngIf="this.userservice.loginstatus">
+            <a class="nav-link " (click)="this.userservice._logout()"  >log out</a>
+          </div>
+          <a *ngIf="isVendor" routerLink="/vendor/shoplist" class=" dropdown-item">  Dashboard   <i class="bi bi-gear"></i></a>
+          <a *ngIf="isCustomer" routerLink="/firsthome/customerdash" class=" dropdown-item">  Dashboard   <i class="bi bi-gear"></i></a>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+        </div>
+
+    </li>
+
+      <li class="nav-item float-right" *ngIf="this.userservice.loginstatus">
+        <img src="{{this.url.mainUrl+(this.userservice.userdata.imageUrl).replace('\\','//')}}" id="userimg">
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- <div class="col-12 top-container text-center">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide secondimg" data-ride="carousel"  id="secondimg">
+    <div class="carousel-inner">
+      <div class="carousel-item active" id="a">
+        <img class="d-block img-fluid" *ngIf="this.shopservice.shopheadimg" src="{{this.shopservice.shopheadimg}}" alt="First slide">
+        <img class="d-block img-fluid" *ngIf="!this.shopservice.shopheadimg" src="assets/header/real1.jpg" alt="First slide">
+        <div class="txt">
+          <p>COME HAVE A LOOK</p><br><br>
+          <p id="p">Find Your <br>Style</p>
+
+         <br><br>
+          <input class="btn btn-outline-light" value="shop now">
+        </div>
+
+
+      </div>
+      <div class="carousel-item" id="b">
+        <img class="d-block" src="assets/header/real.jpg" alt="Second slide" >
+        <div class="txt2">
+          <p>COME HAVE A LOOK</p><br><br>
+          <p id="p">NEW <br>Collection</p><br><br>
+          <input class="btn btn-outline-primary" value="shop now">
+        </div>
+      </div>
+      <div class="carousel-item" id="c">
+        <img class="d-block " src="assets/header/real3.jpg" alt="Third slide" >
+
+        <div class="txt3">
+          <p>appear your love</p><br><br>
+          <p id="p">GIFT FOR <br>Real <br>Man & Women</p><br><br>
+          <input class="btn btn-outline-primary" value="shop now">
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div> -->
+ <!--  <nav class="navbar navbar-expand-lg navbar-light bg-light header"  id="myHeader">
+      <a class="navbar-brand">Kimo shop</a>
+      <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="my-nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home </a>
+          </li>
+          |
+          <li class="nav-item">
+            <a class="nav-link " href="#"  >About</a>
+          </li>
+
+
+
+
+
+          <li class="nav-item" *ngIf="!this.userservice.loginstatus">
+            <a class="nav-link " href="/user/signin"  >sign in</a>
+
+          </li>
+
+          <li class="nav-item" *ngIf="!this.userservice.loginstatus">
+            <a class="nav-link " href="/user/signup"  >sign up</a>
+
+          </li>
+        </ul>
+        <ul class="navbar-nav float-right">
+          <li class="nav-item" *ngIf="this.userservice.loginstatus">
+            <a class="nav-link " (click)="this.userservice._logout()"  >log out</a>
+          </li>
+
+          <li class="nav-item float-right" *ngIf="this.userservice.loginstatus">
+            <a href="" class="btn btn-outline-primary">{{this.userservice.userdata.userName}}</a>
+
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{this.userservice.userdata.userName}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+            </div>
+
+        </li>
+
+          <li class="nav-item float-right" *ngIf="this.userservice.loginstatus">
+            <img src="{{this.userimage + (this.userservice.userdata.imageUrl).replace('\\','//')}}" id="userimg">
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+  -->
+

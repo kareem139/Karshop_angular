@@ -1,0 +1,79 @@
+.myimage
+{
+    width: 90%;
+    height: 90%;
+    padding-top: 10%;
+
+}
+
+
+
+.mycard
+{
+  border-radius: 5px;
+  border-color: rgb(226, 222, 222);
+  border-style: solid;
+  background-color: white;
+  overflow: hidden;
+  height: 400px;
+
+}
+
+.quickview
+{
+
+  visibility: visible;
+  position: absolute;
+  padding-top: 40%;
+  text-align: center;
+  opacity:0;
+
+
+}
+
+
+.mycard:hover
+{
+
+  background-color: whitesmoke;
+  z-index: 2;
+}
+.mycard:hover  .quickview
+{
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  text-align: center;
+  opacity:1;
+  z-index:3;
+
+}
+#img1
+{
+  display:inline;
+}
+#img2
+{
+  display:none;
+}
+
+.mycard:hover #img1
+{
+  display:none;
+}
+
+.mycard:hover #img2
+{
+  display:inline;
+}
+
+.ll
+{
+  height: 80%;
+}
+#alldata
+{
+  height: 20%;
+}
+

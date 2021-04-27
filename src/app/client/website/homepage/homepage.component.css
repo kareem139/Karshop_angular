@@ -1,0 +1,212 @@
+#mainpage
+{
+  background-color: rgb(255, 255, 255);
+  /* overflow: scroll hidden; */
+
+  margin-top: 10%;
+}
+
+#filter
+{
+  background-color:rgb(255, 255, 255);
+  height: 100vh;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px)
+{
+  #filter
+  {
+    display: none;
+  }
+}
+
+.prod
+{
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+
+}
+
+#fsimg
+{
+  width:inherit;
+  height: 100%;
+}
+
+#fsimg:hover
+{
+  transform: scale(1.2);
+  transition-duration: 1s;
+
+}
+
+@media screen and (min-width:768px){
+  #md
+  {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #md
+  {
+    padding: 15%;
+
+  }
+  #lst
+  {
+    padding: 15%;
+  }
+  #fst
+  {
+    padding: 15%;
+  }
+}
+#md
+{
+  padding: 5%;
+  background-color: rgb(208, 232, 243);
+
+}
+#lst
+{
+  padding: 5%;
+  background-color: rgb(253, 223, 223);
+}
+#fst
+{
+  padding: 5%;
+  background-color: rgb(252, 255, 215);
+}
+
+#center
+{
+  position: absolute;
+  top: 2%;
+  left: 37%;
+  font-size: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width:768px) {
+  #center
+  {
+    display: none;
+  }
+}
+
+/* start second section */
+#secondsec
+{
+  padding-top: 10%;
+  overflow: hidden;
+}
+
+#bags
+{
+  overflow: hidden;
+}
+#shoes
+{
+  overflow: hidden;
+}
+#secimg
+{
+  width: 100%;
+  height: 100%;
+}
+
+#secimg:hover
+{
+  transform: scale(1.2);
+  transition-duration: 1s;
+}
+
+.txtsec
+{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+#secondsec > div > div > p
+{
+  font-size: 35px;
+}
+/* end second section */
+.shopcard
+{
+  height: 400px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 10px;
+
+}
+
+#shopcard
+{
+  background-color: black;
+}
+
+.all:hover #mm
+{
+  transform: scale(1.2);
+
+  transition-duration:1s;
+
+}
+.all:hover .shopcard
+{
+  border: turquoise 1px solid;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+
+}
+
+.desc
+{
+  visibility: visible;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  text-align: center;
+  opacity:1;
+  z-index:3;
+}
+
+#un
+{
+  height: 400px;
+}
+
+#shopsection
+{
+  margin-top: 15px;
+
+  background-color: rgb(222, 244, 245);
+}
+
+#swip
+{
+  height: 500px;
+}
+#swipsec
+{
+  margin-top: 50px;
+
+
+}
+.swiperSlide
+{
+  background-color: rgb(239, 245, 245);
+  box-shadow: 10px 10px 5px rgb(255, 254, 254);
+  height: 80%;
+  margin: auto;
+}
+
+.a
+{
+  padding: 5%;
+}
+

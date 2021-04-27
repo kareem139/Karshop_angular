@@ -1,0 +1,210 @@
+<div class="row">
+  <div class="col-lg-12" id="shopheader">
+    <h1>{{this.shopservice.shops.shopName}}</h1>
+  </div>
+  <div class="col-lg-12" id="myslider">
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 m-auto">
+          <img  (click)="open(contentimg)" src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl1).replace('\\','//')}}" style="width: inherit;" alt="">
+        </div>
+
+        <div class="col-lg-3 col-md-3 m-auto">
+          <img  (click)="open(contentimg)" src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl2).replace('\\','//')}}" style="width: inherit;" alt="">
+        </div>
+
+        <div class="col-lg-3 col-md-3 m-auto">
+          <img  (click)="open(contentimg)" src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl3).replace('\\','//')}}" style="width: inherit;" alt="">
+        </div>
+
+
+
+
+
+
+      <ng-template #contentimg let-modal >
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">add category</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <img src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl1).replace('\\','//')}}" alt="" style="width: inherit;">
+                <img src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl2).replace('\\','//')}}" alt="" style="width: inherit;">
+                <img src="{{this.url.mainUrl+(this.shopservice.shops.imageUrl3).replace('\\','//')}}" alt="" style="width: inherit;">
+              </div>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+          <button type="button" class="btn btn-outline-dark" (click)="refresh()">Save</button>
+        </div>
+      </ng-template>
+
+    </div>
+
+  </div>
+
+  <div class="col-lg-12" id="details">
+
+    <div class="row">
+      <div class="col-lg-5 col-md-5 m-auto text-center" id="category">
+        Categories
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let cat of this.shopservice.shops.categories">{{cat.categoryName}}</li>
+
+          <li class=" list-group-item"> <button class="btn btn-lg btn-outline-primary" (click)="open(content)">add category</button></li>
+        </ul>
+
+        <ng-template #content let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">add category</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <app-addcategory></app-addcategory>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+            <button type="button" class="btn btn-outline-dark" (click)="refresh()">Save</button>
+          </div>
+        </ng-template>
+
+
+      </div>
+
+      <div class="col-lg-5 col-md-5 m-auto text-center" id="brand">
+        Brands
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let brand of this.shopservice.shops.brands">{{brand.brandName}}</li>
+          <li class=" list-group-item"> <button class="btn btn-lg btn-outline-primary" (click)="open(contentbrand)">add brand</button></li>
+        </ul>
+
+
+        <ng-template #contentbrand let-modal >
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">add category</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+          </div>
+          <div class="modal-body">
+
+            <app-addbrand></app-addbrand>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
+            <button type="button" class="btn btn-outline-dark" (click)="refresh()">Save</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12" id="product">
+      <div class="row">
+
+
+
+
+
+           <ng-template #content2 let-modal >
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">add product</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-12">
+                    <app-addproduct></app-addproduct>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click') ">close</button>
+              <button type="button" class="btn btn-outline-dark" (click)="refresh() ">save</button>
+            </div>
+          </ng-template>
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-12 m-auto">
+          <div class="row">
+            <div class="col-lg-9 col-md-9 mt-5 " id="otherdetails">
+              <div class="row">
+                <table class="table table-light">
+                  <tbody>
+                    <tr>
+                      <td>Name :</td>
+                      <td>{{this.shopservice.shops.shopName}}</td>
+                    </tr>
+                    <tr>
+                      <td>Email :</td>
+                      <td>{{this.shopservice.shops.email}}</td>
+                    </tr>
+                    <tr>
+                      <td>Address :</td>
+                      <td>{{this.shopservice.shops.address}}</td>
+                    </tr>
+                    <tr>
+                      <td>Phone :</td>
+                      <td>{{this.shopservice.shops.phoneNum}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+            </div>
+            <div class="col-lg-3 mt-5 ">
+              <div class="row" id="cards">
+                <h3 class="col-lg-12 col-md-12 mt-5">Products</h3>
+                <hr>
+                <div class="col-lg-12 col-md-12 mt-5">
+                  <button class="btn btn-lg btn-outline-primary " (click)="open(content2)">add product</button>
+                  <input type="text" id="searchtxt" placeholder="search with name" class=" float-right " (keyup)="search($event)">
+                </div>
+                <hr>
+                <div class="card col-lg-9 mycard m-auto" *ngFor="let item of this.shopservice.shops.products">
+                  <img src="{{this.url.mainUrl+(item.imageUrl1).replace('\\','//')}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{item.productName}}</h5>
+                    <p class="card-text">{{item.description}}</p>
+                    <button  class="btn btn-primary" (click)="Delete(item.productId)">Delete</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+</div>

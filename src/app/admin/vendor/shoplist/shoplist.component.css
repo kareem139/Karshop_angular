@@ -1,0 +1,17 @@
+.firstcard
+{
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgb(175, 175, 216);
+  margin: auto;
+}
+
+.firstcard:hover
+{
+  transform: scale(1.2);
+}
+
+.firstcard > div > div:nth-child(1)
+{
+  padding-top: 50%;
+}

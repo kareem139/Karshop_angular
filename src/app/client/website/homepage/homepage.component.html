@@ -1,0 +1,192 @@
+
+
+
+
+    <div class="row ">
+
+      <div class="col-lg-12 p-0" id="un">
+        <div class="row" style="height: inherit;">
+            <div class="col-lg-12" style="height: inherit;">
+              <img src="assets/pexels-moose-photos-1037992.jpg" style="height: inherit; width: inherit;" alt="">
+            </div>
+        </div>
+      </div>
+
+         <!--start first section-->
+      <div class="col-lg-12"  id="firstsec">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-8 m-auto" id="fst">
+            <div class="row">
+              <div class="col-12">
+                  <img src="{{this.url.mainUrl+(this.shopservice.shops[0]!.imageUrl1.replace('\\','//'))}}" alt="" id="fsimg">
+              </div>
+
+              <div class="col-12">
+                  <p>
+                    sdfnks vfo[dns[vo svdso[nvc kmvsdfknvkfsd vfsd ffjverivfef v evfiuefjijvne v eveijbnviefv veijbv <br>
+                    erhnfioerhnfoienrfc e fvievc dsvcerifvnefir vcrefvnejir cvefijbner vefijbnevf <br>
+                    jnfrnbkjfv ejfvjbenifjbv veifnve veibbv ei vfijjijvfc efeijbcbvj vfiuivf fefiei vefeibbivev vevijbb
+                  </p>
+                  <a routerLink="/firsthome/shoppage" (click)="showshop(this.shopservice.shops[0].shopId)">shop now</a>
+              </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-3 col-md-3" id="center">
+
+          THERE ARE MANY <br>
+          Categories HERE <br>
+          Please Check <br>
+          <a routerLink="/firsthome/shops">LEARN more ...</a>
+
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-8" id="md">
+          <div class="row">
+            <div class="col-12">
+              <img src="{{this.url.mainUrl+(this.shopservice.shops[1].imageUrl1.replace('\\','//'))}}" alt="" id="fsimg">
+            </div>
+
+            <div class="col-12">
+                <p>
+                  sdfnks vfo[dns[vo svdso[nvc kmvsdfknvkfsd vfsd ffjverivfef v evfiuefjijvne v eveijbnviefv veijbv <br>
+                  erhnfioerhnfoienrfc e fvievc dsvcerifvnefir vcrefvnejir cvefijbner vefijbnevf <br>
+                  jnfrnbkjfv ejfvjbenifjbv veifnve veibbv ei vfijjijvfc efeijbcbvj vfiuivf fefiei vefeibbivev vevijbb
+                </p>
+                <a routerLink="/firsthome/shoppage" (click)="showshop(this.shopservice.shops[1].shopId)">shop now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 m-auto col-sm-8" id="lst">
+          <div class="row">
+            <div class="col-12">
+              <img src="{{this.url.mainUrl+(this.shopservice.shops[3].imageUrl1.replace('\\','//'))}}" alt="" id="fsimg">
+            </div>
+
+            <div class="col-12">
+                <p>
+                  sdfnks vfo[dns[vo svdso[nvc kmvsdfknvkfsd vfsd ffjverivfef v evfiuefjijvne v eveijbnviefv veijbv <br>
+                  erhnfioerhnfoienrfc e fvievc dsvcerifvnefir vcrefvnejir cvefijbner vefijbnevf <br>
+                  jnfrnbkjfv ejfvjbenifjbv veifnve veibbv ei vfijjijvfc efeijbcbvj vfiuivf fefiei vefeibbivev vevijbb
+                </p>
+                <a routerLink="/firsthome/shoppage" (click)="showshop(this.shopservice.shops[3].shopId)">shop now</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+          <!-- end  first section-->
+    </div>
+
+
+<div class="row a" id="shopsection">
+  <div class="col-lg-12 col-md-12">
+    <div class="row">
+      <div class="col-lg-12">
+        <p style="font-size: 30px;">all shop</p>
+      </div>
+      <div class="col-lg-4 col-md-4 "  *ngFor="let item of this.shopservice.shops" id="shopcard">
+        <div class="row overflow-hidden all">
+          <div  class="clo-lg-10 col-md-10 m-auto shopcard overflow-hidden " id="">
+            <img src="{{this.url.mainUrl+(item.imageUrl1.replace('\\','//'))}}" id="mm" alt="" style="width: inherit; height: 100%;">
+          </div>
+          <div class=" col-lg-10 col-md-10 descc m-auto">
+              <div class="row">
+                <h1 class="col-12 text-left">{{item.shopName}}</h1>
+                <a routerLink="/firsthome/shoppage" (click)="showshop(item.shopId)" class=" btn btn-outline-info">shop now</a>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="row a " id="secondsec">
+  <div class="col-lg-5 col-md-5 m-auto p-0" id="bags">
+      <img src="/assets/header/bags.png" alt="" id="secimg">
+      <div class="txtsec text-center">
+        <p class=" text-center">Find your <br>
+          favorite bags</p>
+          <a href="" class=" m-auto">shop now</a>
+      </div>
+  </div>
+
+  <div class="col-lg-5 col-md-5 m-auto p-0" id="shoes">
+      <img src="assets/header/shoes.png" alt="" id="secimg">
+      <div class="txtsec text-center">
+        <p class=" text-center">2021 <br>
+          Shoes Collection</p>
+          <a href="" class=" m-auto">shop now</a>
+      </div>
+  </div>
+</div>
+
+<div class="row a" id="swipsec" >
+ <div class="col-lg-10 col-md-10 m-auto">
+  <div class="col-lg-12 text-right" style="background-color: rgb(214, 214, 209); font-size: 30px;">
+    <p class=" text-success" style="width: fit-content;">best product</p>
+  </div>
+  <div class="col-lg-12">
+    <div class="row" >
+      <swiper
+      [slidesPerView]="6"
+      [spaceBetween]="50"
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+      [navigation]="true"
+      [pagination]="{ clickable: true }"
+      [scrollbar]="{ draggable: true }"
+    >
+      <ng-template swiperSlide *ngFor="let item of this.productservice.products" >
+       <div class="col-lg-12 swiperSlide"  >
+         <div class="row" id="swip">
+           <div class="col-12" >
+             <img src="{{this.url.mainUrl+(item.imageUrl1.replace('\\','//'))}}" style="width: inherit; height: 150px;" alt="">
+
+           </div>
+           <div class="col-12">
+             <div class="row">
+               <div class="col-12">
+                 {{item.productName}}
+               </div>
+               <div class="col-12">
+                 {{item.shopName}}
+               </div>
+               <div class="col-12">
+                 <a class=" btn btn-success">add to cart</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+      </ng-template>
+
+    </swiper>
+    </div>
+  </div>
+ </div>
+</div>
+    <!--start second section-->
+
+
+
+    <!--end second section-->
+
+    <!-- start shop -->
+    <!-- <div class="row">
+      <router-outlet></router-outlet>
+    </div> -->
+
+    <!-- end shop -->
+
+<div class="row">
+  <div class="col-lg-12 p-0">
+    <app-footer></app-footer>
+  </div>
+</div>
+

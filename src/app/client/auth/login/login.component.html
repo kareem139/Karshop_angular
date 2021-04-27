@@ -1,0 +1,47 @@
+<div class="row main">
+  <div class="col-lg-4 col-md-4 m-auto text-center title">
+      <div class="row">
+        <div class="co-6">
+          <div class="arrow-right"></div>
+        </div>
+        <div class="col-6 m-auto">
+          <h1>KARshop</h1>
+          <p><i class="bi bi-caret-right "></i>be in your world</p>
+        </div>
+      </div>
+
+
+  </div>
+    <div class="vh ">
+
+    </div>
+        <form #login="ngForm" (ngSubmit)="submit(login)" class="col-lg-4 col-md-4 m-auto myform ">
+          <br><br>
+          <h3 class=" text-center m-auto">Log In</h3>
+          <br><br><hr><br><br>
+
+          <div class="form-group row">
+            <label for="email" class="col-4">email</label>
+            <input type="email" class="" name="email" id="email" ngModel onkeypress="this.style.width =50">
+
+          </div>
+          <hr>
+          <div class="form-group row">
+            <label for="password" class="col-4">password</label>
+            <input type="password" class="" name="password" id="password" ngModel >
+
+          </div>
+          <hr>
+
+          <div class="row">
+            <input type="submit" value="Signin" class="btn btn-outline-success m-auto">
+
+          </div>
+          <p>If you don't have account click <a routerLink="/user/signup">create account</a></p>
+
+
+
+        </form>
+
+</div>
+

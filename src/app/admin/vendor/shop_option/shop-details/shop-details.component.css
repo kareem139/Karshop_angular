@@ -1,0 +1,77 @@
+#myslider
+{
+  height: 20%;
+}
+
+#msimg
+{
+  width: 80%;
+    margin: auto;
+    height: 300px;
+}
+
+.list-group
+{
+  width: 50%;
+  margin: auto;
+}
+
+#shopheader
+{
+  text-align: center;
+    background-color: rgb(247, 242, 235);
+}
+#details
+{
+  margin-top: 100px;
+    background-color: aliceblue;
+}
+
+.card-img-top
+{
+  height: 150px;
+}
+
+#product
+{
+  margin-top: 100px;
+  height: 600px;
+
+}
+#cards
+{
+  height: 500px;
+  overflow: scroll;
+  background-color: rgb(236, 224, 205);
+
+}
+#cards::-webkit-scrollbar
+{
+ display: none;
+
+}
+#producthead
+{
+  width: 100%;
+  background-color: rgb(252, 246, 233);
+}
+
+#content
+{
+    width: 50%;
+    margin: auto;
+    top: 50%;
+}
+
+#searchtxt
+{
+  height: 50px;
+  border-radius: 5px;
+  border-color: blanchedalmond;
+
+}
+
+.hidden
+{
+  display: none;
+}

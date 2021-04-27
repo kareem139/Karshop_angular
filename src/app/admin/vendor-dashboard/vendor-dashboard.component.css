@@ -1,0 +1,44 @@
+#sidebar
+{
+  height: 98vh;
+  background-color: rgba(73, 71, 71, 0.972);
+}
+
+#header
+{
+  height: 5%;
+  width: 100%;
+  background-color: rgb(241, 242, 243);
+}
+.main
+{
+  height: 98vh;
+}
+
+#sideul
+{
+  color: white;
+}
+
+.target
+{
+  margin-top: 5%;
+}
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+#main > div > div.col-lg-12.target
+{
+  margin-left: 160px;
+}

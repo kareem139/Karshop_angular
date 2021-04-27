@@ -1,0 +1,74 @@
+
+<div class="row">
+  <form ngForm="form" (ngSubmit)="submit(this.service.shop)" class="col-lg-4 col-md-4 m-auto myform ">
+    <br>
+    <h3 class=" text-center m-auto">add Shop</h3>
+    <br><hr><br>
+    <input type="text"  name="shopId" id="shopId" [(ngModel)]="this.service.shop.shopId" onkeypress="this.style.width =50" hidden>
+    <div class="form-group row">
+      <label for="shopName" class="col-4">shopName</label>
+      <input type="text"  name="shopName" id="shopName" [(ngModel)]="this.service.shop.shopName" onkeypress="this.style.width =50">
+
+    </div>
+    <hr>
+    <div class="form-group row">
+      <label for="email" class="col-4">email</label>
+      <input type="text" name="email" id="email" [(ngModel)]="this.service.shop.email" onkeypress="this.style.width =50">
+
+    </div>
+    <hr>
+    <div class="form-group row">
+      <label for="address" class="col-4">address</label>
+      <input type="text"  name="address" id="address" [(ngModel)]="this.service.shop.address" onkeypress="this.style.width =50">
+
+    </div>
+    <hr>
+    <div class="form-group row">
+      <label for="image" class="col-4">image1</label>
+      <input type="file" class="col-8" name="image" id="image" [(ngModel)]="this.service.shop.image" (change)="handlefiles0($event)" multiple (onload)="handlefiles0($event)" id="image" >
+
+      <br><br>
+
+      <img class="col-6 m-auto"  id="me" src="assets/r.png" alt="" style="width: 150px; height: 125px;">
+
+    </div>
+
+    <!-- <div class="form-group row">
+      <label for="image" class="col-4">image2</label>
+      <input type="file" class="col-8" name="image" id="image" ngModel (change)="handlefiles1($event)" (onload)="handlefiles1($event)" id="image" >
+      <br><br>
+
+
+    </div>
+
+    <div class="form-group row">
+      <label for="image" class="col-4">image3</label>
+      <input type="file" class="col-8" name="image" id="image" ngModel (change)="handlefiles2($event)" (onload)="handlefiles2($event)" id="image" >
+      <br><br>
+
+
+    </div> -->
+
+
+
+
+    <hr>
+    <div class="form-group row">
+      <label for="phoneNum" class="col-4">phoneNum</label>
+      <input type="text" name="phoneNum" id="phoneNum" [(ngModel)]="this.service.shop.phoneNum" onkeypress="this.style.width =50">
+
+    </div>
+
+
+
+
+
+
+    <div class="row">
+      <input type="submit" value="Signup" class="btn btn-outline-success m-auto">
+    </div>
+    <p>If you  have account click <a routerLink="/user/signin">create account</a></p>
+
+
+  </form>
+</div>
