@@ -24,9 +24,9 @@ const routes: Routes = [
   {
     path: "firsthome", component: FirsthomeComponent, children: [
       { path: "home", component: HomepageComponent },
-      { path: "shoppage", component: ShoppageComponent,canActivate:[AuthGuard],data:{permittedRoles:['Customer','']} },
-      { path: "cart", component: CartComponent ,canActivate:[AuthGuard],data:{permittedRoles:['Customer','']}},
-      { path: "shops", component: ShopshomeComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Customer',''] } },
+      { path: "shoppage", component: ShoppageComponent},
+      { path: "cart", component: CartComponent ,canActivate:[AuthGuard],data:{permittedRoles:['Customer']}},
+      { path: "shops", component: ShopshomeComponent },
       { path: "customerdash", component: CustomerdashComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Customer'] } }
   ]}
   ,

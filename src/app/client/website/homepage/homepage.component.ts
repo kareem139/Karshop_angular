@@ -35,6 +35,7 @@ export class HomepageComponent implements OnInit {
     this.shopservice.shop.shopId = shopId;
     localStorage.setItem('id', this.shopservice.shop.shopId.toString());
     this.shopservice.shopheadimg = this.url.mainUrl + (this.shopservice.shops[2].imageUrl3.replace('\\', '//'));
+    console.log('lolo')
   }
 
   onSwiper(swiper:any) {
