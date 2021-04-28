@@ -86,7 +86,7 @@
   <div class="col-lg-12 col-md-12">
     <div class="row">
       <div class="col-lg-12">
-        <p style="font-size: 30px;">all shop</p>
+        <p style="font-size: 30px; text-align: center;">all shop</p>
       </div>
       <div class="col-lg-4 col-md-4 "  *ngFor="let item of this.shopservice.shops" id="shopcard">
         <div class="row overflow-hidden all">
@@ -96,9 +96,11 @@
           <div class=" col-lg-10 col-md-10 descc m-auto">
               <div class="row">
                 <h1 class="col-12 text-left">{{item.shopName}}</h1>
+                <h4 class="col-12">{{item.address}}</h4>
                 <a routerLink="/firsthome/shoppage" (click)="showshop(item.shopId)" class=" btn btn-outline-info">shop now</a>
               </div>
           </div>
+
         </div>
 
       </div>
@@ -134,13 +136,14 @@
   <div class="col-lg-12">
     <div class="row" >
       <swiper
-      [slidesPerView]="6"
+      [slidesPerView]="4"
       [spaceBetween]="50"
       (swiper)="onSwiper($event)"
       (slideChange)="onSlideChange()"
       [navigation]="true"
       [pagination]="{ clickable: true }"
       [scrollbar]="{ draggable: true }"
+      [autoplay]="true"
     >
       <ng-template swiperSlide *ngFor="let item of this.productservice.products" >
        <div class="col-lg-12 swiperSlide"  >

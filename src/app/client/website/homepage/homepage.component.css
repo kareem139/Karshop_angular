@@ -158,13 +158,13 @@
   transition-duration:1s;
 
 }
-.all:hover .shopcard
+/* .all:hover .shopcard
 {
   border: turquoise 1px solid;
   border-radius: 5px;
-  box-shadow: 10px 10px 5px grey;
 
-}
+
+} */
 
 .desc
 {

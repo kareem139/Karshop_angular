@@ -27,11 +27,16 @@ export class MainheaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
         if (localStorage.getItem('token')!=null) {
           this.userservice.loginstatus = true;
           this.userservice.getuserdata();
 
-          switch (this.userservice.userdata.role) {
+          let payload = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]));
+          let userId = payload.userId;
+          let role = payload.role;
+          this.cartservice._get_all_items(userId);
+          switch (role) {
             case "Vendor":
               this.isVendor = true;
               this.isCustomer = false;
@@ -50,12 +55,12 @@ export class MainheaderComponent implements OnInit {
           }
         } else {
           this.userservice.loginstatus = false;
-          console.log('jkhh')
+
         }
 
 
 
-    this.cartservice._get_all_items(this.userservice.userdata.userId);
+
 
 
   }

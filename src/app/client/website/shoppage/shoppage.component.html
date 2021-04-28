@@ -4,13 +4,13 @@
         <div class="col-lg-10 col-md-10 m-auto">
               <ul> Category
                   <li *ngFor="let cat of this.shopservice.shops.categories">
-                      <input type="checkbox" value="={{cat.categoryId}}" (change)="getfilter($event)">  <span>{{cat.categoryName}}</span>
+                      <input type="checkbox" [value]="cat.categoryId"  (click)="catfilter($event)">  <span>{{cat.categoryName}}</span>
                   </li>
               </ul>
               <hr>
               <ul>Brand
                 <li *ngFor="let brand of this.shopservice.shops.brands">
-                    <input type="checkbox" value="={{brand.brandId}}">  <span>{{brand.brandName}}</span>
+                    <input type="checkbox" value="{{brand.brandId}}" (click)="brandfilter($event)">  <span>{{brand.brandName}}</span>
                 </li>
             </ul>
         </div>
@@ -20,6 +20,8 @@
 
     <div class="row">
       <div class="col-lg-3 col-md-3 mycard" *ngFor="let item of this.shopservice.shops.products">
+        <div class="catfilter" hidden>{{item.categoryId}}</div>
+        <div class="brandfilter" hidden>{{item.brandId}}</div>
         <div class="row p-0 m-0" style="height: inherit;">
           <div class="col-12 text-center ll">
             <img src="{{this.url.mainUrl+(item.imageUrl1.replace('\\','//'))}}" alt=""  class="myimage" id="img1">
@@ -31,7 +33,10 @@
 
           <div class="col-12 fixed" id="alldata">
             <div class="row" style="height: inherit;">
-                <h5 href="" class=" ui-widget-header"> {{item.productName}}</h5>
+                <h5 href="" class="col-6 ui-widget-header"> {{item.productName}}</h5>
+                <h6 class="col-6 text-center">{{item.price }}</h6>
+                <h6 class="col-6">{{item.categoryName}}</h6>
+                <h6 class="col-6 text-center">{{item.brandName}}</h6>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import SwiperCore, {
   Pagination,
   Scrollbar,
   A11y,
+  Autoplay
 } from 'swiper/core';
 import { ProductService } from 'src/app/admin/vendor/shared/product.service';
 import { ShopService } from 'src/app/admin/vendor/shared/shop.service';
@@ -11,7 +12,7 @@ import { UrlService } from 'src/app/shared/url.service';
 SwiperCore.use([Navigation,
   Pagination,
   Scrollbar,
-  A11y,]);
+  A11y,Autoplay]);
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -35,13 +36,13 @@ export class HomepageComponent implements OnInit {
     this.shopservice.shop.shopId = shopId;
     localStorage.setItem('id', this.shopservice.shop.shopId.toString());
     this.shopservice.shopheadimg = this.url.mainUrl + (this.shopservice.shops[2].imageUrl3.replace('\\', '//'));
-    console.log('lolo')
+
   }
 
   onSwiper(swiper:any) {
-    console.log(swiper);
+
   }
   onSlideChange() {
-    console.log('slide change');
+
   }
 }

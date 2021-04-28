@@ -49,10 +49,60 @@ export class ShoppageComponent implements OnInit {
 
   }
 
-  getfilter(e:any)
+  catfilter(e:any)
+  {
+    let catid=document.getElementsByClassName('catfilter');
+    if (e.target.checked==true) {
+      for (let index = 0; index < catid.length; index++) {
+        const element = catid[index];
+          if (e.target.value==element.innerHTML) {
+            element.parentElement?.classList.remove('hide');
+          } else {
+            element.parentElement?.classList.add('hide');
+          }
+
+      }
+    } else {
+      for (let index = 0; index < catid.length; index++) {
+        const element = catid[index];
+
+            element.parentElement?.classList.remove('hide');
+
+
+      }
+    }
+
+
+
+  }
+
+  brandfilter(e:any)
   {
 
-      console.log(e.target.value)
+    let brandid=document.getElementsByClassName('brandfilter');
+    if (e.target.checked==true) {
+      for (let index = 0; index < brandid.length; index++) {
+        const element = brandid[index];
+          if (e.target.value==element.innerHTML) {
+            element.parentElement?.classList.remove('hide');
+          } else {
+            element.parentElement?.classList.add('hide');
+          }
+
+
+      }
+    } else {
+      for (let index = 0; index < brandid.length; index++) {
+        const element = brandid[index];
+
+            element.parentElement?.classList.remove('hide');
+
+
+      }
+    }
+
+
+
   }
 
 }
